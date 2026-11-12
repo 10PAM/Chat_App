@@ -1,9 +1,9 @@
-# LAB 4 - CWU CS460: SignIn Application
+# LAB 5 - CWU CS460: Chat Application
 ## About: 
-##### Lab concept is to be able to successfully implement an instructed sign-in application.
+##### Lab concept is to be able to successfully implement an instructed chat application. Extended from Lab 4 project.
 
 ## Functionality: 
-##### User can sign-in, user can sign-out, user can create-accout.
+##### User can sign-in, user can sign-out, user can create-account, user can chat.
 
 ### Screenshot 1 (App Icon):
 <a href="https://youtu.be/CZy1sA9mp_4"><img width="300" height="140" alt="Screenshot 1" src="https://github.com/user-attachments/assets/220428cc-fac4-4be1-a4c7-bfc356a28081"></a>  
