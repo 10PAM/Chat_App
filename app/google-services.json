@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "766031565682",
+    "project_id": "signinapp-cfc19",
+    "storage_bucket": "signinapp-cfc19.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766031565682:android:fd65869aa24426315ac3eb",
+        "android_client_info": {
+          "package_name": "dev.piceno.chat_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoFY8IwVZC079CpNmdd1_QVe9CEEB1FeU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
