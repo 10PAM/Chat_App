@@ -13,4 +13,7 @@
     <string name="already_have_an_account">Already Have an Account</string>
     <string name="sign_up">Sign Up</string>
     <string name="chat">Chat</string>
+    <string name="direct_message">Direct Message</string>
+    <string name="send_message">send message</string>
+    <string name="type_a_message">Type a Message</string>
 </resources>
