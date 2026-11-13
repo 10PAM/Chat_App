@@ -12,4 +12,5 @@
     <string name="confirm_password">Confirm Password</string>
     <string name="already_have_an_account">Already Have an Account</string>
     <string name="sign_up">Sign Up</string>
+    <string name="chat">Chat</string>
 </resources>

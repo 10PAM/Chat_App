@@ -52,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
      */
     private void setListeners() {
         binding.signOut.setOnClickListener(view -> signOut());
+        binding.buttonAdd.setOnClickListener(view -> {
+            startActivity(new Intent(getApplicationContext(), UserActivity.class));
+        });
     }
 
     /**
@@ -64,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
         d.setCircular(true);
         image.setImageDrawable(d);
     }
-
 
     /**
      * Displays a Toast message with a specified string. Used for visual feedback on the user end.
