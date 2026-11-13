@@ -11,7 +11,6 @@
         android:id="@+id/profileImage"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="20dp"
         android:src="@drawable/background_image"
         android:background="@drawable/background_image"
         android:scaleType="centerCrop"
@@ -29,6 +28,7 @@
         app:layout_constraintWidth_max="wrap"
         android:textColor="@color/white"
         android:textSize="13sp"
+        android:layout_marginStart="10dp"
         android:paddingStart="12dp"
         android:paddingVertical="12dp"
         android:paddingEnd="8dp"/>
@@ -36,6 +36,7 @@
     <TextView
         android:id="@+id/textTimeData"
         android:layout_width="0dp"
+        android:layout_marginTop="2dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@id/textMessage"
         app:layout_constraintTop_toBottomOf="@id/textMessage"

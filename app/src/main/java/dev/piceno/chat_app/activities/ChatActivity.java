@@ -4,15 +4,21 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Base64;
-import androidx.appcompat.app.AppCompatActivity;
-import com.google.firebase.firestore.FirebaseFirestore;
+import android.view.View;
+import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Objects;
-
+import java.util.Locale;
 import dev.piceno.chat_app.adapters.ChatAdapter;
 import dev.piceno.chat_app.databinding.ActivityChatBinding;
 import dev.piceno.chat_app.models.ChatMessage;
@@ -27,7 +33,7 @@ public class ChatActivity extends AppCompatActivity {
 
     private ActivityChatBinding binding;
     private User receiverUser;
-    private List<ChatMessage> chatMessagess;
+    private List<ChatMessage> chatMessages;
     private ChatAdapter chatAdapter;
     private PreferenceManager preferenceManager;
     private FirebaseFirestore database;
@@ -45,6 +51,7 @@ public class ChatActivity extends AppCompatActivity {
         loadReceiverDetails();
         setListeners();
         initialize();
+        ListenForMessages();
     }
 
     /**
@@ -71,8 +78,8 @@ public class ChatActivity extends AppCompatActivity {
      */
     private void initialize() {
         preferenceManager = new PreferenceManager(getApplicationContext());
-        chatMessagess = new ArrayList<>();
-        chatAdapter = new ChatAdapter(chatMessagess,
+        chatMessages = new ArrayList<>();
+        chatAdapter = new ChatAdapter(chatMessages,
                 getBitmapFromEncodedString(receiverUser.image),
                 preferenceManager.getString(Constants.KEY_USER_ID));
         binding.chatRecycler.setAdapter(chatAdapter);
@@ -92,6 +99,55 @@ public class ChatActivity extends AppCompatActivity {
         binding.inputMessage.setText(null);
     }
 
+    private final EventListener<QuerySnapshot> eventListener = ((value, error) -> {
+        if (error != null) {
+            return;
+        }
+        if (value != null) {
+            int count = chatMessages.size();
+            for (DocumentChange documentChange : value.getDocumentChanges()) {
+                if (documentChange.getType() == DocumentChange.Type.ADDED) {
+                    ChatMessage chatMessage = new ChatMessage();
+                    chatMessage.senderId = documentChange.getDocument()
+                            .getString(Constants.KEY_SENDER_ID);
+                    chatMessage.receiverId = documentChange.getDocument()
+                            .getString(Constants.KEY_RECEIVER_ID);
+                    chatMessage.message = documentChange.getDocument()
+                            .getString(Constants.KEY_MESSAGE);
+                    chatMessage.dateTime = getReadableDataTime(documentChange.getDocument()
+                            .getDate(Constants.KEY_TIMESTAMP));
+                    chatMessage.date_object = documentChange.getDocument()
+                            .getDate(Constants.KEY_TIMESTAMP);
+                    chatMessages.add(chatMessage);
+                }
+            }
+            Collections.sort(chatMessages, (obj1, obj2) -> obj1.date_object.compareTo(obj2.date_object));
+            if (count == 0) {
+                chatAdapter.notifyDataSetChanged();
+            } else {
+                chatAdapter.notifyItemRangeChanged(chatMessages.size(), chatMessages.size());
+                binding.chatRecycler.smoothScrollToPosition(chatMessages.size() - 1);
+            }
+            binding.chatRecycler.setVisibility(View.VISIBLE);
+        }
+        binding.progressionBar.setVisibility(View.GONE);
+    });
+
+    /**
+     * Listens for any incoming User messages.
+     */
+    private void ListenForMessages() {
+        database.collection(Constants.KEY_COLLECTION_CHAT)
+                .whereEqualTo(Constants.KEY_SENDER_ID, preferenceManager.getString(Constants.KEY_USER_ID))
+                .whereEqualTo(Constants.KEY_RECEIVER_ID, receiverUser.id)
+                .addSnapshotListener(eventListener);
+
+        database.collection(Constants.KEY_COLLECTION_CHAT)
+                .whereEqualTo(Constants.KEY_RECEIVER_ID, preferenceManager.getString(Constants.KEY_USER_ID))
+                .whereEqualTo(Constants.KEY_SENDER_ID, receiverUser.id)
+                .addSnapshotListener(eventListener);
+    }
+
     /**
      * Sets all button listeners.
      */
@@ -99,6 +155,19 @@ public class ChatActivity extends AppCompatActivity {
         binding.buttonBack.setOnClickListener(view->{
             onBackPressed();
         });
+        binding.buttonSend.setOnClickListener(view -> {
+            sendMessages();
+        });
+    }
 
+    /**
+     * Formats message Time and Data in format: Month day, Year - Hour, Minute
+     *
+     * @param p_date The Date object.
+     * @return Returns the formatted date.
+     */
+    private String getReadableDataTime(Date p_date) {
+        return new SimpleDateFormat("MMM dd, yyyy - hh:mm a", Locale.getDefault())
+                .format(p_date);
     }
 }

@@ -11,7 +11,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import java.util.Objects;
 import dev.piceno.chat_app.databinding.ActivitySignInBinding;
 import dev.piceno.chat_app.utilities.Constants;
 import dev.piceno.chat_app.utilities.PreferenceManager;

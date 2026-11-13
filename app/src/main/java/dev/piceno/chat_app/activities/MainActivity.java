@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         loadUserDetails();
         setListeners();
+        getToken();
     }
 
     /**

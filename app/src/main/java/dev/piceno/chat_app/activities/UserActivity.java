@@ -4,24 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
-
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import dev.piceno.chat_app.R;
 import dev.piceno.chat_app.adapters.UsersAdapter;
 import dev.piceno.chat_app.databinding.ActivityUserBinding;
 import dev.piceno.chat_app.listeners.UserListener;
-import dev.piceno.chat_app.models.ChatMessage;
 import dev.piceno.chat_app.models.User;
 import dev.piceno.chat_app.utilities.Constants;
 import dev.piceno.chat_app.utilities.PreferenceManager;

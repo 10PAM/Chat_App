@@ -60,14 +60,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:background="@drawable/scrollview_rounded">
 
-        <ProgressBar
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center"
-            android:id="@+id/progressionBar"
-            android:progressBackgroundTint="@color/primary"
-            android:backgroundTint="@color/primary"/>
-
     </FrameLayout>
 
     <ImageView
@@ -79,7 +71,8 @@
         android:layout_height="60dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
-        android:src="@drawable/icon_add"
+        android:src="@drawable/icon_info"
+        android:padding="10dp"
         android:background="@drawable/background_image"
         android:backgroundTint="@color/primary"
         android:scaleType="centerCrop"
