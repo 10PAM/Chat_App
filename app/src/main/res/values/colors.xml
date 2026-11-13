@@ -4,6 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="primary">#FFD83D68</color>
     <color name="primary_text">#FFFFFF</color>
+    <color name="userBackground">#2C2C2C</color>
     <color name="secondary_text">#FFFFFFFF</color>
     <color name="input_background">#4E4E4E</color>
     <color name="icon_background">#FFFFFFFF</color>

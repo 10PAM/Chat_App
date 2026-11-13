@@ -51,27 +51,20 @@ public class SignInActivity extends AppCompatActivity {
     };
 
 
+    /**
+     * Checks if user is existing or new.
+     */
     @Override
     public void onStart() {
         super.onStart();
-        mAuth.addAuthStateListener(authStateListener);
-
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (Objects.nonNull(currentUser)) {
-            // User logged in
-            startActivity(new Intent(this, MainActivity.class));
-        } else {
-            // First time app use.
-            binding = ActivitySignInBinding.inflate(getLayoutInflater());
-            setContentView(binding.getRoot());
-            preferenceManager = new PreferenceManager(getApplicationContext());
-            setListeners();
-        }
-
         binding = ActivitySignInBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
         preferenceManager = new PreferenceManager(getApplicationContext());
         setListeners();
+        if (preferenceManager.getBoolean(Constants.KEY_IS_SIGNED_IN)) {
+            startActivity(new Intent(this, MainActivity.class));
+        } else {
+            setContentView(binding.getRoot());
+        }
     }
 
     /**
