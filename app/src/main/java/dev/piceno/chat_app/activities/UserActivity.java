@@ -1,5 +1,6 @@
 package dev.piceno.chat_app.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -19,11 +20,13 @@ import java.util.List;
 import dev.piceno.chat_app.R;
 import dev.piceno.chat_app.adapters.UsersAdapter;
 import dev.piceno.chat_app.databinding.ActivityUserBinding;
+import dev.piceno.chat_app.listeners.UserListener;
+import dev.piceno.chat_app.models.ChatMessage;
 import dev.piceno.chat_app.models.User;
 import dev.piceno.chat_app.utilities.Constants;
 import dev.piceno.chat_app.utilities.PreferenceManager;
 
-public class UserActivity extends AppCompatActivity {
+public class UserActivity extends AppCompatActivity implements UserListener {
 
     private ActivityUserBinding binding;
     private PreferenceManager preferenceManager;
@@ -77,7 +80,7 @@ public class UserActivity extends AppCompatActivity {
                            users.add(user);
                        }
                        if (!users.isEmpty()) {
-                           UsersAdapter usersAdapter = new UsersAdapter(users);
+                           UsersAdapter usersAdapter = new UsersAdapter(users, this);
                            binding.usersRecyclerView.setAdapter(usersAdapter);
                            binding.usersRecyclerView.setVisibility(View.VISIBLE);
                        } else {
@@ -120,5 +123,18 @@ public class UserActivity extends AppCompatActivity {
         } else {
             binding.progressionBar.setVisibility(View.INVISIBLE);
         }
+    }
+
+    /**
+     * Handles User profile click.
+     *
+     * @param user The User of the clicked profile.
+     */
+    @Override
+    public void onUserClicked(User user) {
+        Intent intent = new Intent(getApplicationContext(), ChatActivity.class);
+        intent.putExtra(Constants.KEY_USER, user);
+        startActivity(intent);
+        finish();
     }
 }

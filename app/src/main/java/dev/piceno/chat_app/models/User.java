@@ -5,6 +5,6 @@ import java.io.Serializable;
 /**
  * This class handles all User objects.
  */
-public class User implements java.io.Serializable {
+public class User implements Serializable {
     public String name, image, email, token, id;
 }

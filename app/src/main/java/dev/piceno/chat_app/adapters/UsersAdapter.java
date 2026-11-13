@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 import dev.piceno.chat_app.databinding.ItemContainerUserBinding;
+import dev.piceno.chat_app.listeners.UserListener;
 import dev.piceno.chat_app.models.User;
 
 /**
@@ -17,14 +18,16 @@ import dev.piceno.chat_app.models.User;
 public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserViewHolder> {
 
     private final List<User> users;
+    private final UserListener userListener;
 
     /**
      * Constructs a Users Adapter with predefined users list.
      *
      * @param p_users The User object's list.
      */
-    public UsersAdapter(List<User> p_users) {
+    public UsersAdapter(List<User> p_users, UserListener p_userListener) {
         this.users = p_users;
+        this.userListener = p_userListener;
     }
 
     /**
@@ -90,6 +93,9 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserViewHold
             binding.userName.setText(user.name);
             binding.userEmail.setText(user.email);
             binding.profileImage.setImageBitmap(getUserImage(user.image));
+            binding.getRoot().setOnClickListener(v-> {
+                userListener.onUserClicked(user);
+            });
         }
     }
 

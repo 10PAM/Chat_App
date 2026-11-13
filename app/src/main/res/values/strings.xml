@@ -16,4 +16,6 @@
     <string name="direct_message">Direct Message</string>
     <string name="send_message">send message</string>
     <string name="type_a_message">Type a Message</string>
+    <string name="user_information">user information</string>
+    <string name="received_from_profile_image">received from profile image</string>
 </resources>

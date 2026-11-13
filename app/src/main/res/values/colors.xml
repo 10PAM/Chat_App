@@ -13,4 +13,6 @@
     <color name="received_message_background">#FFFFFFFF</color>
     <color name="green">#FF000000</color>
     <color name="background">#2B2B2B</color>
+    <color name="message_sent">#A22E4B</color>
+    <color name="message_received">#000000</color>
 </resources>
