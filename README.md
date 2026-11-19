@@ -18,8 +18,9 @@ Here, a filled out sign up section on the sign up page is displayed.
 Here, a toast notification is displayed when the password sign up information is improperly formatted.
 
 ### Screenshot 4 (Firebase Console):
-<a href="https://youtu.be/CZy1sA9mp_4"><img width="600" height="600" alt="Screenshot 4" src="https://github.com/user-attachments/assets/91508e8c-2a94-44c8-a864-3357b343493f"></a>  
-Here, Firebase Firestore being utilized for the app is displayed, along with the sign up details from my created account. 
+<a href="https://youtu.be/CZy1sA9mp_4"><img width="600" height="600" alt="Screenshot 4a" src="https://github.com/user-attachments/assets/0cf81580-cc14-42da-9ba8-a411e00c48c8"></a>  
+<a href="https://youtu.be/CZy1sA9mp_4"><img width="600" height="600" alt="Screenshot 4b" src="https://github.com/user-attachments/assets/94ff1b26-1059-490a-9839-0d3c47fb6671"></a>  
+Here, Firebase Firestore being utilized for the app is displayed, along with the sign up details from my created account and a chat message data of a conversation. 
 
 ### Screenshot 5 (Sign In):
 <a href="https://youtu.be/CZy1sA9mp_4"><img width="270" height="600" alt="Screenshot 5a" src="https://github.com/user-attachments/assets/8d672a3b-82ae-4dc8-8cc8-936416026b04"></a>  
