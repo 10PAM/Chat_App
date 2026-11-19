@@ -23,8 +23,12 @@ Here, Firebase Firestore being utilized for the app is displayed, along with the
 
 ### Screenshot 5 (Sign In):
 <a href="https://youtu.be/CZy1sA9mp_4"><img width="270" height="600" alt="Screenshot 5a" src="https://github.com/user-attachments/assets/8d672a3b-82ae-4dc8-8cc8-936416026b04"></a>  
-<a href="https://youtu.be/CZy1sA9mp_4"><img width="270" height="600" alt="Screenshot 5b" src="https://github.com/user-attachments/assets/fdbc1de7-d8cc-4eeb-9a50-dd8ad020b08e"></a>  
+<a href="https://youtu.be/CZy1sA9mp_4"><img width="270" height="600" alt="Screenshot 5b" src="https://github.com/user-attachments/assets/1ef2db4b-147e-4e08-a570-c2ee89d4789d"></a>  
 Here, a successful login of my created account is visible. 
+
+### Screenshot 6 (Chatting):
+<a href="https://youtu.be/CZy1sA9mp_4"><img width="270" height="600" alt="Screenshot 6a" src="https://github.com/user-attachments/assets/7e73e61f-8786-4221-9be5-9fa94fda9ada"></a>  
+<a href="https://youtu.be/CZy1sA9mp_4"><img width="270" height="600" alt="Screenshot 6b" src="https://github.com/user-attachments/assets/c1ffb352-d00c-4c91-a30a-1420aea0087c"></a>  
 
 ### DEMO (Video):
 <a href="https://youtu.be/CZy1sA9mp_4">( Video )</a>
