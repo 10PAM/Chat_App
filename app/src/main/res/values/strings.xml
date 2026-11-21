@@ -18,4 +18,8 @@
     <string name="type_a_message">Type a Message</string>
     <string name="user_information">user information</string>
     <string name="received_from_profile_image">received from profile image</string>
+    <string name="default_web_client_id">218176123211-il3plft67jnc30ficmfapvtkcau26bpv.apps.googleusercontent.com</string>
+    <string name="sign_in_with_google">Sign in With Google</string>
+    <string name="or">- OR -</string>
+    <string name="register_with_google">Register with Google</string>
 </resources>

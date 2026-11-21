@@ -49,40 +49,6 @@
                 android:textStyle="bold"
                 android:layout_marginTop="6dp"/>
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:id="@+id/inputEmail"
-                android:layout_marginTop="20dp"
-                android:hint="@string/email"
-                android:imeOptions="actionNext"
-                android:importantForAutofill="no"
-                android:inputType="textEmailAddress"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:background="@drawable/background_input"
-                android:textColorHint="@color/primary_text"
-                android:textColor="@color/primary_text"
-                android:textAlignment="gravity"
-                android:textSize="18sp"/>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:id="@+id/inputPassword"
-                android:hint="@string/password"
-                android:imeOptions="actionNext"
-                android:importantForAutofill="no"
-                android:inputType="textPassword"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:background="@drawable/background_input"
-                android:textColorHint="@color/primary_text"
-                android:textColor="@color/primary_text"
-                android:textAlignment="gravity"
-                android:textSize="18sp"/>
-
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -93,7 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
-                android:text="@string/sign_in"
+                android:text="@string/sign_in_with_google"
                 android:textAlignment="gravity"
                 android:textColor="@color/white"
                 android:textSize="20sp"
@@ -110,11 +76,23 @@
             </FrameLayout>
 
             <TextView
+                android:id="@+id/orText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/or"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                />
+
+            <TextView
                 android:id="@+id/textCreateNewAccount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Create New Account"
+                android:text="@string/create_new_account"
                 android:textAlignment="center"
                 android:textColor="@color/primary"
                 android:textSize="24sp"

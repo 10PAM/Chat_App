@@ -7,12 +7,25 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:766031565682:android:fd65869aa24426315ac3eb",
+        "mobilesdk_app_id": "1:766031565682:android:2a4c2e47f11d9b2d5ac3eb",
         "android_client_info": {
           "package_name": "dev.piceno.chat_app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "766031565682-igpihgltir1to4gtdmgvvmbd41qur883.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dev.piceno.chat_app",
+            "certificate_hash": "5ef7663cd9cd3e6714cf96c4901f35b0bcbe1621"
+          }
+        },
+        {
+          "client_id": "766031565682-agp1ivg59oudiu1hqs99u39vq7e4ku9e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAoFY8IwVZC079CpNmdd1_QVe9CEEB1FeU"
@@ -20,7 +33,41 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "766031565682-agp1ivg59oudiu1hqs99u39vq7e4ku9e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766031565682:android:fd65869aa24426315ac3eb",
+        "android_client_info": {
+          "package_name": "dev.piceno.signin_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "766031565682-agp1ivg59oudiu1hqs99u39vq7e4ku9e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoFY8IwVZC079CpNmdd1_QVe9CEEB1FeU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "766031565682-agp1ivg59oudiu1hqs99u39vq7e4ku9e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

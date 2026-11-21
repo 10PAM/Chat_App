@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         preferenceManager = new PreferenceManager(getApplicationContext());
-
         loadUserDetails();
         setListeners();
         getToken();
